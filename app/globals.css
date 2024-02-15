@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+/* START: General styles */
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6 flex-1 pt-36;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.custom-btn {
+  @apply flex flex-row relative justify-center items-center outline-none text-white bg-primary-blue hover:bg-blue-700  font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 ;
+}
+/* END: General styles */
+
+/* START: Hero styles */
+.hero {
+  @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
+}
+
+.hero__title {
+  @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
+}
+
+/* Add this media query for mobile screens */
+@media (max-width: 640px) {
+  .hero__title {
+    @apply text-4xl; /* Adjust the size as needed */
+  }
+}
+
+.hero__subtitle {
+  @apply text-[27px] text-black-100 font-light mt-5;
+}
+
+/* Add this media query for mobile screens */
+@media (max-width: 640px) {
+  .hero__subtitle {
+    @apply text-lg mt-3; /* Adjust the size and spacing as needed */
+  }
+}
+
+
+.hero__image-container {
+  @apply xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen;
+}
+
+.hero__image {
+  @apply relative xl:w-full w-[60%] xl:h-full h-[390px] z-0 md:h-[500px];
+}
+
+.hero__image-overlay {
+  @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+}
+/* END: Hero styles */
+
+/* START: Home styles */
+
+.home__text-container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+}
+
+.home__filters {
+  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+}
+
+.home__filter-container {
+  @apply flex justify-start flex-wrap items-center gap-2;
+}
+
+.home__cars-wrapper {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-4 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
+}
+
+
+.home__error-container {
+  @apply mt-16 flex justify-center items-center flex-col gap-2;
+}
+/* END: Home styles */
+
+/* START: Car Card styles */
+.car-card {
+  @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+}
+
+.car-card__content {
+  @apply w-full flex justify-between items-start gap-2;
+}
+
+.car-card__content-title {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
+}
+
+.car-card__price {
+  @apply flex mt-6 text-[32px] leading-[38px] font-extrabold;
+}
+
+.car-card__price-dollar {
+  @apply self-start text-[14px] leading-[17px] font-semibold;
+}
+
+.car-card__price-day {
+  @apply self-end text-[14px] leading-[17px] font-medium;
+}
+
+.car-card__image {
+  @apply relative w-full h-40 my-3 object-contain;
+}
+
+.car-card__icon-container {
+  @apply flex group-hover:invisible w-full justify-between text-grey;
+}
+
+.car-card__icon {
+  @apply flex flex-col justify-center items-center gap-2;
+}
+
+.car-card__icon-text {
+  @apply text-[14px] leading-[17px];
+}
+
+.car-card__btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
+/* END: Car Card styles */
+
+/* START: Car Details styles */
+.car-details__dialog-panel {
+  @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
+}
+
+.car-details__close-btn {
+  @apply absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full;
+}
+
+.car-details__main-image {
+  @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
+}
+/* END: Car Details styles */
+
+/* START: Custom Filter styles */
+.custom-filter__btn {
+  @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
+}
+
+.custom-filter__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+/* END: Custom Filter styles */
+
+/* START: Footer styles */
+/* .footer {
+  @apply flex flex-col text-black-100  mt-5 border-t border-gray-100 p-4;
+}
+
+.footer__links-container {
+  @apply  max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10 grid grid-cols-2  sm:gap-6 sm:grid-cols-3;
+}
+
+.footer__rights {
+  @apply flex flex-col justify-start items-start gap-6;
+}
+
+.footer__links {
+  @apply flex-1 w-full  md:justify-end flex-wrap max-md:mt-10 gap-20 text-gray-500 dark:text-gray-400 font-medium max-md:flex-col  justify-between sm:px-16 px-6 py-10 grid grid-cols-2  sm:gap-6 sm:grid-cols-3;
+}
+
+.footer__link {
+  @apply flex flex-col gap-6 text-base min-w-[170px];
+  flex-direction: column; 
+}
+
+.footer__copyrights {
+  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
+}
+
+.footer__copyrights-link {
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+} */
+/* END: Footer styles */
+
+/* START: searchbar styles */
+.searchbar {
+  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
+}
+
+.searchbar__item {
+  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
+}
+
+.searchbar__input {
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
+}
+/* END: searchbar styles */
+
+/* START: search manufacturer styles */
+.search-manufacturer {
+  @apply flex-1 max-sm:w-full flex justify-start items-center;
+}
+
+.search-manufacturer__input {
+  @apply w-full h-[48px] pl-12 p-4 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+}
+
+.search-manufacturer__options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.search-manufacturer__option {
+  @apply cursor-default select-none py-2 pl-10 pr-4 hover:bg-blue-700 hover:text-white relative;
+}
+.combo{
+  @apply py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm
+}
+
+
+.seacrhOtherClass{
+  @apply max-sm:hidden
+}
+.seacrhOtherClasssmall{
+@apply sm:hidden
+}
+/* END: search manufacturer styles */
+
+
+
+.divclass{
+  @apply flex group-hover:invisible w-full justify-between text-grey
+}
+
+.ViewMore{
+  @apply w-full py-[16px] rounded-full bg-primary-blue
+
+}
+
+.ViewMoreText{
+  @apply text-white text-[14px] leading-[17px] font-bold
+
+}
+
+.DialogPanel{
+  @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5
+}
+
+.ButtonDialog{
+  @apply absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full;
+}
+
+
+.DialogContanct{
+  @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
+}
+
+.DialogImage{
+  @apply flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg;
+}
+
+.SearchBtn{
+  @apply -ml-3 z-10;
+}
+
+.activselect{
+  @apply  hover:bg-primary-blue hover:text-white
+
+}
+
+
+/* Footer.css */
+
+.footer {
+  background-color: #fff;
+  color: #000;
+  border-top-width: 1px;
+  border-color: rgb(243 244 246 );
+  padding: 20px 0;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #000;
+
+}
+
+.footer__logo img {
+  width: 100px; /* Adjust the width of the logo as needed */
+}
+
+.footer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #000;
+
+}
+
+.footer__nav li {
+  display: inline-block;
+  margin-right: 10px;
+  color: #000;
+
+}
+
+.footer__nav li:last-child {
+  margin-right: 0;
+}
+
+.footer__nav a {
+  color: #565454;
+  text-decoration: none;
+}
+
+.footer__copyright {
+  text-align: center;
+  margin-top: 20px;
+  color: #565454;
+
+}
+
+
+
+
+
+/* heroEdit */
+
+.heroSection{
+@apply container flex flex-col px-5 py-8 mx-auto space-y-6 lg:h-[32rem] lg:py-16 lg:flex-row lg:items-center
+}
+
+.heroContioner{
+  @apply w-full lg:w-1/2
+}
+
+.heroContionerTwo{
+  @apply lg:max-w-lg
+}
+
+.heroText{
+@apply text-3xl font-bold tracking-wide text-gray-900 lg:text-5xl
+}
+
+.heroP{
+@apply text-[25px] text-black-100 font-light mt-4 mb-3 flex items-center mx-2;
+}
+
+@media (max-width: 640px) {
+  .heroP {
+    @apply text-[18px]; /* Adjust the size as needed */
+  }
+}
+
+.heroImageContiner{
+  @apply flex items-center justify-center w-full h-96 lg:w-1/2
+}
+
+.heroImage {
+  @apply object-cover w-full h-full mx-auto rounded-md lg:max-w-2xl
+}
+
+
+.joinUssec{
+@apply w-full mt-8 lg:max-w-sm ;
+}
